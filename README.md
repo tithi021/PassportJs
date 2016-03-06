@@ -32,3 +32,16 @@ We will build an application that will have:
     ------ profile.ejs  <!-- after a user logs in, they will see their profile -->
     - package.json      <!-- handle our npm packages -->
     - server.js         <!-- setup our application -->
+
+
+# Module dependency 
+
+    # Express - is the framework.
+    # Ejs - is the templating engine.
+    # Mongoose is object modeling for our MongoDB database.
+    # Passport - stuff will help us authenticating with different methods.
+    # Connect-flash - allows for passing session flashdata messages.
+    # Bcrypt-nodejs - gives us the ability to hash the password.
+    # Morgan - is another HTTP request logger middleware for Node.js.
+    # body-parser - is create a middleware and all middleware with populate the req.body property with the parsed body for json, row, text, URL-encode body parser
+    # cookie-parser - parse cookie header
