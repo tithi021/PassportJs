@@ -12,12 +12,26 @@ module.exports = function(app, passport){
 		res.render('login.ejs', {message: req.flash('loginMessage')});
 	});
 
+	//process the login form
+	app.post('login', passport.authenticate('local-login', {
+		successRedirect: '/profile',
+		failureRedirect: '/login',
+		failureFlash: true
+	}));
+
 	//SignUp
 	//show the signup form
 	app.get('/signup', function(req, res){
 		//render the page and pass in any flash data if it exists
 		res.render('signup.ejs', { message: req.flash('signupMessage') } );
 	});
+
+	// process the signup form
+	app.post('/signup', passport.authenticate('local-signup', {
+		successRedirect: '/profile', //redirect to the secure profile section
+		failureRedirect: '/signup', // redirect to to the signup page if there is no error
+		failureFlash: true // allow flash message
+	}));
 
 	//Profile section
 	// we will want this protected so you have to be logged in to visit
